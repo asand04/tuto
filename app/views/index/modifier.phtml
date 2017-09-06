@@ -1,0 +1,19 @@
+<h2>Modifier un libeler</h2>
+<form method="post" action="update">
+    <div class="input-group">
+        <span class="input-group-addon">
+            <select name="id_fil">
+                <?php
+                $filiere = filiere::find();
+                foreach ($filiere as $value) {
+                    ?>
+                    <option value=<?= $value->getId_fil() ?>><?= $value->libfil ?></option>
+                <?php } ?>
+            </select>
+        </span>
+        <input type="text" class="form-control" name="newlibfil" placeholder=" Entrez le nouveau libellé de la filière">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-secondary" type="button" >Changer</button>
+        </span>
+    </div>
+</form>
